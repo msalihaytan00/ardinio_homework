@@ -1,0 +1,42 @@
+
+const int ledPin1 = 13;  
+const int ledPin2 = 12;  
+const int ledPin3 = 11;  
+
+unsigned long previousMillis1 = 0;  
+unsigned long previousMillis2 = 0;  
+unsigned long previousMillis3 = 0;  
+
+const long interval1 = 300;  
+const long interval2 = 750;  
+const long interval3 = 1000;
+void setup()
+{
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  
+}
+
+void loop()
+{
+  
+   unsigned long currentMillis = millis();
+
+  if (currentMillis - previousMillis1 >= interval1) {
+    previousMillis1 = currentMillis;
+    digitalWrite(ledPin1, !digitalRead(ledPin1));  
+  }
+
+  if (currentMillis - previousMillis2 >= interval2) {
+    previousMillis2 = currentMillis;
+    digitalWrite(ledPin2, !digitalRead(ledPin2));
+  }
+
+  if (currentMillis - previousMillis3 >= interval3) {
+    previousMillis3 = currentMillis;
+    digitalWrite(ledPin3, !digitalRead(ledPin3));
+  }
+  
+ 
+}
